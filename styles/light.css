@@ -40,15 +40,12 @@
 
 @media (prefers-color-scheme: light) {
   .page.theme_auto {
-    --background-color: #FFF1F7;
-    --accent-color: #FF8DCB;
-    --nav-color: #353430;
-    --main-color: #353430;
-    --text-color: #353430;
-    --title-color: #FFC2E6;
-    }
-
-    .page.theme_auto {
+      --background-color: #FFF1F7;
+      --accent-color: #FF8DCB;
+      --nav-color: #353430;
+      --main-color: #353430;
+      --text-color: #353430;
+      --title-color: #FFC2E6;
       background-image: url(/images/cover-image-light.png);
     }
 
