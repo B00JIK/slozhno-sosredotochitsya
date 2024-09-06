@@ -16,24 +16,16 @@
   --nav-color: #353430;
   --main-color: #353430;
   --text-color: #353430;
+  --hover-color: rgb(53, 52, 48, 0.4);
   --title-color: #FFC2E6;
-  background-image: url(/images/cover-image-light.png);
-}
-
-:root.theme-light {
-  --background-color: #FFF1F7;
-  --accent-color: #FF8DCB;
-  --nav-color: #353430;
-  --main-color: #353430;
-  --text-color: #353430;
-  --title-color: #FFC2E6;
+  background-image: url(../images/cover-image-light.png);
 }
 
 .theme_light .decoration {
   color: transparent;
 }
 
-.theme_light .circle {
+.theme_light .decoration::after {
   background-color: transparent;
   box-shadow: 0 0 4px 2px transparent;
 }
@@ -45,16 +37,24 @@
       --nav-color: #353430;
       --main-color: #353430;
       --text-color: #353430;
+      --hover-color: rgb(53, 52, 48, 0.4);
       --title-color: #FFC2E6;
-      background-image: url(/images/cover-image-light.png);
+      background-image: url(../images/cover-image-light.png);
     }
 
     .theme_auto .decoration {
       color: transparent;
     }
     
-    .theme_auto .circle {
-      background-color: transparent;
+    .theme_auto .decoration::after {
+      content: "";
+      width: 9px; 
+      height: 9px;
+      background: transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: 18px;
+      right: 9px;
       box-shadow: 0 0 4px 2px transparent;
     }
 }

@@ -4,12 +4,13 @@
 */
 
 :root {
-  --text-font: "IBM Plex Mono", sans-serif;
+  --text-font: "IBM Plex Mono", monospace;
   --text-size: 18px;
   --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --background-color: #000028;
   --accent-color: #FF0070;
   --nav-color: #FF0070;
+  --hover-color: rgb(255, 0, 112 , 0.4);
   --main-color: #000028;
   --text-color: #F1B2CE;
   --title-color: #DB00FF;
