@@ -51,6 +51,7 @@
   border-right: solid 1px var(--nav-color, #FF0070);
   width: 25px;
   height: 25px;
+  top: 10px;
   right: 9px;
 }
 
@@ -77,6 +78,7 @@
   background-color: transparent;
   border: none;
   color: var(--nav-color, #FF0070);
+  border: solid 1px transparent;
   font-family: var(--text-font, monospace), monospace;
   text-transform: lowercase;
   font-size: var(--text-size);
@@ -130,7 +132,7 @@
   padding-block: 65px 57px;
   writing-mode: horizontal-tb;
   line-height: 0.82em;
-  text-shadow: 5px 5px 0 var(--title-shadow-color, #FF0070);
+  text-shadow: 3px 3px 0 var(--title-shadow-color, #FF0070);
 }
 
 .title-decor {
@@ -173,8 +175,6 @@
   padding-block-start: 20px;
 }
 
-
-
 .paragraph {
   font-family: var(--text-font, monospace), monospace;
   color: var(--text-color, #F1B2CE);
@@ -189,15 +189,11 @@
 }
 
 .link-shadow:hover {
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color, #F1B2CE);
 }
 
 .link-shadow:focus {
-  outline: solid 1px var(--text-color);
-}
-
-.link-shadow:focus-visible {
-  outline: none;
+  outline: solid 1px var(--text-color, #F1B2CE); 
 }
 
 .images {
@@ -216,27 +212,20 @@
   height: 100vh;
   min-height: 668px;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 10px;  
+  display: flex;
+  align-items: center;
 }
 
 .footer-title {
   font-family: var(--text-font, monospace), monospace;
   font-size: var(--title-font-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
   color: var(--title-color, #DB00FF);
-  padding-block: 248px 240px;
   padding-left: 5px;
   text-shadow: 2px 2px 0 var(--title-shadow-color, #FF0070);
 }
 
-.footer.decorated-zone::after {
-  bottom: 20px;
-  left: 10px;
-}
-
 @media (width >= 768px) {
-  .page {
-    /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  }
 
   .decorated-zone::before {
     top: 20px;
@@ -244,7 +233,7 @@
   }
   
   .decorated-zone::after {
-    bottom: -125px;
+    bottom: 20px;
     left: 20px;
   }
   
@@ -266,21 +255,22 @@
   .header {
     padding-block-end: 80px;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 169px;
   }
 
   .title-position {
     padding-left: 50%;
-    padding-block: 162px 183px;
     padding-right: 20px;
   }
   
   .main-title {
-    padding-block-start: 174px;
-    padding-block-end: 0px;
+    padding-block: 0px;
   }
 
   .main {
-    padding-block-start: 207px;
+    padding-block-start: 60px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -288,8 +278,12 @@
   .section {
     display: flex;
     gap: 20px;
-    padding-block-end: 79px;
+    padding-block-end: 82px;
     padding-block-start: 0px;
+  }
+
+  .section:last-of-type {
+    padding-block-end: 60px;
   }
 
   .article-size {
@@ -319,7 +313,6 @@
 
   .section.images-section {
     display: grid;
-     padding-block-start: 4px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 23px 192px 230px 318px;
     gap: 20px;
@@ -366,35 +359,17 @@
     padding-block-end: 0;
   }
 
-  .footer-title {
-    text-align: center;
-    padding-block-start: 417px;
-  }
-
-  .footer.decorated-zone::before {
-    top: 0;
-    right: 20px;
-  }
-  
-  .footer.decorated-zone::after {
-    bottom: 20px;
-    left: 20px;
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media (1024px <= width)  {
-  .page {
-    /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  }
 
-  .decorated-zone::before {
-    top: 20px;
-    right: 20px;
-  }
-  
-  .decorated-zone::after {
-    bottom: 20px;
-    left: 20px;
+  .header {
+    display: block;
   }
 
   .header__theme-menu-list {
@@ -408,13 +383,8 @@
   }
 
   .main-title {
-    padding-block: 276px 0;
+    padding-block: 274px 115px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .title-position {
-    padding-left: 50%;
-    padding-block: 114px 103px;
   }
 
   .main {
@@ -460,8 +430,8 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   
-  .footer.decorated-zone::after {
+  /* .footer.decorated-zone::after {
     bottom: 39px;
     left: 20px;
-  }
+  } */
 }
