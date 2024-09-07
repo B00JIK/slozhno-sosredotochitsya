@@ -202,7 +202,7 @@
 }
 
 .images-section {
-  padding-block-end: 51px;
+  padding-block-end: 40px;
   padding-block-start: 53px;
   display: grid;
 }
@@ -426,7 +426,6 @@
 
   .footer-title {
     text-align: center;
-    padding-block: 262px 319px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   
